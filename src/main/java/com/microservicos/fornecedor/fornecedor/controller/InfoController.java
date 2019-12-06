@@ -15,8 +15,8 @@ public class InfoController {
 	@Autowired
 	InfoService infoService;
 	
-	@GetMapping("/info")
-	public InfoFornecedor getEstado(@PathVariable("/{estado}") String estado) {
+	@GetMapping(path="/info/{estado}")
+	public InfoFornecedor getEstado(@PathVariable("estado") String estado) {
 		return infoService.getInfoPorEstado(estado);
 	}
 }
